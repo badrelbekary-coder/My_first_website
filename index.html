@@ -2,257 +2,301 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Best Technologie</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ultimate Tech Store</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
 body{
+  margin:0;
   font-family:Arial;
   background:#0b0f1a;
-  color:white;
+  color:#fff;
 }
 
-/* NAVBAR */
-.navbar{
+nav{
   display:flex;
   justify-content:space-between;
-  align-items:center;
-  padding:15px 25px;
-  background:#020617;
-  position:sticky;
-  top:0;
-  z-index:100;
+  padding:15px;
+  background:#11182a;
 }
 
-.logo{
-  color:#38bdf8;
-  font-size:22px;
-  font-weight:bold;
-}
+.logo{color:#00d4ff;font-size:20px;font-weight:bold;}
 
-.navbar input{
-  padding:8px;
-  border-radius:5px;
-  border:none;
-  width:200px;
-}
-
-.cart{
-  background:#22c55e;
-  padding:6px 12px;
-  border-radius:5px;
+button{
   cursor:pointer;
 }
 
-/* HEADER */
-header{
-  text-align:center;
-  padding:80px 20px;
-  background:linear-gradient(120deg,#020617,#1e293b);
+/* Tabs */
+.tabs{
+  display:flex;
+  justify-content:center;
+  margin:15px;
 }
 
-header h1{
-  font-size:42px;
+.tabs button{
+  margin:5px;
+  padding:10px;
+  border:none;
+  background:#00d4ff;
+  border-radius:5px;
 }
 
-header p{
-  color:#94a3b8;
-}
-
-/* PRODUCTS */
-.section-title{
-  text-align:center;
-  margin-top:40px;
-  color:#38bdf8;
-}
-
-.products{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-  gap:20px;
+/* Sections */
+.section{
+  display:none;
   padding:20px;
 }
 
-.card{
-  background:#020617;
-  border-radius:12px;
-  overflow:hidden;
-  transition:0.3s;
-  cursor:pointer;
-  box-shadow:0 0 15px rgba(0,0,0,0.5);
+.active{
+  display:block;
 }
 
-.card:hover{
-  transform:translateY(-8px) scale(1.03);
+/* Products */
+.products{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+}
+
+.card{
+  background:#11182a;
+  padding:15px;
+  border-radius:10px;
 }
 
 .card img{
   width:100%;
-  height:200px;
+  height:150px;
   object-fit:cover;
 }
 
-.card-body{
-  padding:12px;
-}
-
-.price{
-  color:#22c55e;
-  margin:5px 0;
-}
-
-.btn{
-  display:block;
-  text-align:center;
-  padding:8px;
-  margin-top:5px;
-  background:#25D366;
-  color:white;
-  text-decoration:none;
-  border-radius:5px;
-}
-
-/* MODAL */
-.modal{
-  display:none;
+/* Cart */
+.cart{
   position:fixed;
-  top:0;left:0;
-  width:100%;height:100%;
-  background:rgba(0,0,0,0.85);
-  justify-content:center;
-  align-items:center;
-}
-
-.modal-content{
-  background:#020617;
-  padding:20px;
-  border-radius:10px;
+  right:10px;
+  top:70px;
   width:300px;
+  background:#11182a;
+  padding:10px;
+  border-radius:10px;
+  display:none;
 }
 
-.close{
+.remove{
   color:red;
   cursor:pointer;
 }
 
-/* FOOTER */
-footer{
-  text-align:center;
+/* Login */
+.login-box{
+  max-width:300px;
+  margin:auto;
+  background:#11182a;
   padding:20px;
-  background:#020617;
-  margin-top:30px;
-  color:#94a3b8;
+  border-radius:10px;
 }
-</style>
 
+input{
+  width:100%;
+  margin:5px 0;
+  padding:8px;
+  border:none;
+  border-radius:5px;
+}
+
+</style>
 </head>
 
 <body>
 
-<div class="navbar">
-  <div class="logo">Best Technologie ⚡</div>
-  <input type="text" id="search" placeholder="Search product...">
-  <div class="cart" onclick="showCart()">🛒 <span id="count">0</span></div>
+<nav>
+  <div class="logo">Ultimate Store</div>
+  <div>
+    <button onclick="toggleCart()">Cart</button>
+    <button onclick="logout()">Logout</button>
+  </div>
+</nav>
+
+<div class="tabs">
+  <button onclick="showSection('shop')">Shop</button>
+  <button onclick="showSection('admin')">Admin</button>
+  <button onclick="showSection('login')">Login</button>
 </div>
 
-<header>
-  <h1>Welcome to Store Badr</h1>
-  <p>Best Electronic Deals Online</p>
-</header>
-
-<!-- WATCHES -->
-<h2 class="section-title">Smart Watches ⌚</h2>
-<div class="products">
-
-<div class="card" onclick="openModal('Smart Watch Ultra','800 DH',this)">
-<img src="https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b">
-<div class="card-body">
-<h3>Smart Watch Ultra</h3>
-<p class="price">800 DH</p>
-<button onclick="add(event,'Watch')">Add</button>
-<a class="btn" target="_blank" href="https://wa.me/212706825831?text=Smart%20Watch">Buy</a>
-</div>
-</div>
-
-</div>
-
-<!-- LAPTOP -->
-<h2 class="section-title">Laptops 💻</h2>
-<div class="products">
-
-<div class="card" onclick="openModal('Lenovo Laptop i5','5500 DH',this)">
-<img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8">
-<div class="card-body">
-<h3>Lenovo Laptop i5</h3>
-<p class="price">5500 DH</p>
-<button onclick="add(event,'Laptop')">Add</button>
-<a class="btn" target="_blank" href="https://wa.me/212706825831?text=Laptop">Buy</a>
-</div>
-</div>
-
-</div>
-
-<!-- HEADPHONES -->
-<h2 class="section-title">Headphones 🎧</h2>
-<div class="products">
-
-<div class="card" onclick="openModal('Bluetooth Headphones','300 DH',this)">
-<img src="https://images.unsplash.com/photo-1518444065439-e933c06ce9cd">
-<div class="card-body">
-<h3>Bluetooth Headphones</h3>
-<p class="price">300 DH</p>
-<button onclick="add(event,'Headphones')">Add</button>
-<a class="btn" target="_blank" href="https://wa.me/212706825831?text=Headphones">Buy</a>
-</div>
-</div>
-
-</div>
-
-<!-- MODAL -->
-<div class="modal" id="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal()">X</span>
-    <img id="modalImg" width="100%">
-    <h2 id="title"></h2>
-    <p id="price"></p>
+<!-- LOGIN -->
+<div id="login" class="section active">
+  <div class="login-box">
+    <h3>Login</h3>
+    <input id="user" placeholder="Username">
+    <input id="pass" type="password" placeholder="Password">
+    <button onclick="login()">Login</button>
   </div>
 </div>
 
-<footer>
-  © 2026 Best Technologie - Contact via WhatsApp
-</footer>
+<!-- SHOP -->
+<div id="shop" class="section">
+  <div class="products" id="products"></div>
+</div>
+
+<!-- ADMIN -->
+<div id="admin" class="section">
+  <h3>Add Product</h3>
+  <input id="pname" placeholder="Name">
+  <input id="pprice" placeholder="Price">
+  <input id="pimg" placeholder="Image URL">
+  <button onclick="addProduct()">Add</button>
+
+  <h3>Product List</h3>
+  <div id="adminList"></div>
+</div>
+
+<!-- CART -->
+<div class="cart" id="cart">
+  <h3>Cart</h3>
+  <div id="cartItems"></div>
+  <div id="total"></div>
+</div>
 
 <script>
-let cart=[];
+let products = JSON.parse(localStorage.getItem("products")) || [];
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+let loggedIn = false;
 
-function add(e,name){
-  e.stopPropagation();
-  cart.push(name);
-  document.getElementById("count").innerText=cart.length;
+/* INIT DEFAULT PRODUCTS */
+if(products.length === 0){
+  products = [
+    {name:"Watch", price:200, img:"https://via.placeholder.com/300"},
+    {name:"Headphones", price:150, img:"https://via.placeholder.com/300"}
+  ];
+  localStorage.setItem("products", JSON.stringify(products));
 }
 
-function showCart(){
-  alert("Items in cart: "+cart.length);
+/* LOGIN */
+function login(){
+  const u = document.getElementById("user").value;
+  const p = document.getElementById("pass").value;
+
+  if(u==="admin" && p==="1234"){
+    loggedIn = true;
+    alert("Login success");
+    showSection("shop");
+  }else{
+    alert("Wrong credentials");
+  }
 }
 
-function openModal(title,price,card){
-  document.getElementById("modal").style.display="flex";
-  document.getElementById("title").innerText=title;
-  document.getElementById("price").innerText=price;
-  document.getElementById("modalImg").src=card.querySelector("img").src;
+function logout(){
+  loggedIn = false;
+  alert("Logged out");
 }
 
-function closeModal(){
-  document.getElementById("modal").style.display="none";
+/* SECTIONS */
+function showSection(id){
+  document.querySelectorAll(".section").forEach(s=>s.classList.remove("active"));
+  document.getElementById(id).classList.add("active");
+
+  if(id==="shop") displayProducts();
+  if(id==="admin") displayAdmin();
 }
 
-/* SEARCH */
-document.getElementById("search").addEventListener("keyup",function(){
-  let value=this.value.toLowerCase();
-  document.querySelectorAll(".card").forEach(card=>{
-    card.style.display = card.innerText.toLowerCase().includes(value) ? "block":"none";
+/* PRODUCTS */
+function displayProducts(){
+  const div = document.getElementById("products");
+  div.innerHTML = "";
+
+  products.forEach((p,i)=>{
+    div.innerHTML += `
+      <div class="card">
+        <img src="${p.img}">
+        <h4>${p.name}</h4>
+        <p>$${p.price}</p>
+        <button onclick="addToCart(${i})">Add</button>
+      </div>
+    `;
   });
-});
+}
+
+/* ADMIN */
+function addProduct(){
+  if(!loggedIn){
+    alert("Login required");
+    return;
+  }
+
+  const name = document.getElementById("pname").value;
+  const price = document.getElementById("pprice").value;
+  const img = document.getElementById("pimg").value;
+
+  products.push({name, price, img});
+  localStorage.setItem("products", JSON.stringify(products));
+
+  displayProducts();
+  displayAdmin();
+}
+
+function displayAdmin(){
+  const div = document.getElementById("adminList");
+  div.innerHTML = "";
+
+  products.forEach((p,i)=>{
+    div.innerHTML += `
+      <div>
+        ${p.name} - $${p.price}
+        <button onclick="deleteProduct(${i})">Delete</button>
+      </div>
+    `;
+  });
+}
+
+function deleteProduct(i){
+  products.splice(i,1);
+  localStorage.setItem("products", JSON.stringify(products));
+  displayAdmin();
+  displayProducts();
+}
+
+/* CART */
+function addToCart(i){
+  cart.push(products[i]);
+  localStorage.setItem("cart", JSON.stringify(cart));
+  updateCart();
+}
+
+function updateCart(){
+  const div = document.getElementById("cartItems");
+  const totalEl = document.getElementById("total");
+
+  div.innerHTML = "";
+  let total = 0;
+
+  cart.forEach((item,i)=>{
+    total += Number(item.price);
+
+    div.innerHTML += `
+      <div>
+        ${item.name} - $${item.price}
+        <span class="remove" onclick="removeItem(${i})">X</span>
+      </div>
+    `;
+  });
+
+  totalEl.innerText = "Total: $" + total;
+}
+
+function removeItem(i){
+  cart.splice(i,1);
+  localStorage.setItem("cart", JSON.stringify(cart));
+  updateCart();
+}
+
+function toggleCart(){
+  const c = document.getElementById("cart");
+  c.style.display = c.style.display === "block" ? "none" : "block";
+}
+
+/* INIT */
+displayProducts();
+updateCart();
 </script>
 
 </body>
