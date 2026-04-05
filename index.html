@@ -5,90 +5,173 @@
 <title>Best Technologie</title>
 
 <style>
-body {
-  margin:0;
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
   font-family:Arial;
-  background:#000;
+  background:#0b0f1a;
   color:white;
 }
 
-.section-title {
+/* NAVBAR */
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 25px;
+  background:#020617;
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+
+.logo{
+  color:#38bdf8;
+  font-size:22px;
+  font-weight:bold;
+}
+
+.navbar input{
+  padding:8px;
+  border-radius:5px;
+  border:none;
+  width:200px;
+}
+
+.cart{
+  background:#22c55e;
+  padding:6px 12px;
+  border-radius:5px;
+  cursor:pointer;
+}
+
+/* HEADER */
+header{
   text-align:center;
-  margin-top:30px;
+  padding:80px 20px;
+  background:linear-gradient(120deg,#020617,#1e293b);
+}
+
+header h1{
+  font-size:42px;
+}
+
+header p{
+  color:#94a3b8;
+}
+
+/* PRODUCTS */
+.section-title{
+  text-align:center;
+  margin-top:40px;
   color:#38bdf8;
 }
 
-.products {
+.products{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:15px;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:20px;
   padding:20px;
 }
 
-.card {
-  background:#111827;
-  border-radius:10px;
-  padding:10px;
+.card{
+  background:#020617;
+  border-radius:12px;
+  overflow:hidden;
   transition:0.3s;
+  cursor:pointer;
+  box-shadow:0 0 15px rgba(0,0,0,0.5);
 }
 
-.card:hover {
-  transform:scale(1.05);
+.card:hover{
+  transform:translateY(-8px) scale(1.03);
 }
 
-.card img {
+.card img{
   width:100%;
-  border-radius:10px;
+  height:200px;
+  object-fit:cover;
 }
 
-.price {
+.card-body{
+  padding:12px;
+}
+
+.price{
   color:#22c55e;
+  margin:5px 0;
 }
 
-.btn {
+.btn{
   display:block;
   text-align:center;
-  padding:10px;
+  padding:8px;
+  margin-top:5px;
   background:#25D366;
   color:white;
   text-decoration:none;
   border-radius:5px;
 }
+
+/* MODAL */
+.modal{
+  display:none;
+  position:fixed;
+  top:0;left:0;
+  width:100%;height:100%;
+  background:rgba(0,0,0,0.85);
+  justify-content:center;
+  align-items:center;
+}
+
+.modal-content{
+  background:#020617;
+  padding:20px;
+  border-radius:10px;
+  width:300px;
+}
+
+.close{
+  color:red;
+  cursor:pointer;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:20px;
+  background:#020617;
+  margin-top:30px;
+  color:#94a3b8;
+}
 </style>
+
 </head>
 
 <body>
 
-<h1 style="text-align:center;">Best Technologie ⚡</h1>
+<div class="navbar">
+  <div class="logo">Best Technologie ⚡</div>
+  <input type="text" id="search" placeholder="Search product...">
+  <div class="cart" onclick="showCart()">🛒 <span id="count">0</span></div>
+</div>
 
-<!-- WATCH -->
-<h2 class="section-title">Smart Watch ⌚</h2>
+<header>
+  <h1>Welcome to Store Badr</h1>
+  <p>Best Electronic Deals Online</p>
+</header>
+
+<!-- WATCHES -->
+<h2 class="section-title">Smart Watches ⌚</h2>
 <div class="products">
 
-<div class="card">
-<img src="watch.png">
+<div class="card" onclick="openModal('Smart Watch Ultra','800 DH',this)">
+<img src="https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b">
+<div class="card-body">
 <h3>Smart Watch Ultra</h3>
 <p class="price">800 DH</p>
-<a class="btn" target="_blank"
-href="https://wa.me/212706825831?text=I%20want%20Smart%20Watch">
-Buy on WhatsApp
-</a>
+<button onclick="add(event,'Watch')">Add</button>
+<a class="btn" target="_blank" href="https://wa.me/212706825831?text=Smart%20Watch">Buy</a>
 </div>
-
-</div>
-
-<!-- HEADPHONES -->
-<h2 class="section-title">Headphones 🎧</h2>
-<div class="products">
-
-<div class="card">
-<img src="headphone.png">
-<h3>Wireless Bluetooth Headphones</h3>
-<p class="price">300 DH</p>
-<a class="btn" target="_blank"
-href="https://wa.me/212706825831?text=I%20want%20Headphones">
-Buy on WhatsApp
-</a>
 </div>
 
 </div>
@@ -97,17 +180,80 @@ Buy on WhatsApp
 <h2 class="section-title">Laptops 💻</h2>
 <div class="products">
 
-<div class="card">
-<img src="laptop.png">
+<div class="card" onclick="openModal('Lenovo Laptop i5','5500 DH',this)">
+<img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8">
+<div class="card-body">
 <h3>Lenovo Laptop i5</h3>
 <p class="price">5500 DH</p>
-<a class="btn" target="_blank"
-href="https://wa.me/212706825831?text=I%20want%20Lenovo%20Laptop">
-Buy on WhatsApp
-</a>
+<button onclick="add(event,'Laptop')">Add</button>
+<a class="btn" target="_blank" href="https://wa.me/212706825831?text=Laptop">Buy</a>
+</div>
 </div>
 
 </div>
+
+<!-- HEADPHONES -->
+<h2 class="section-title">Headphones 🎧</h2>
+<div class="products">
+
+<div class="card" onclick="openModal('Bluetooth Headphones','300 DH',this)">
+<img src="https://images.unsplash.com/photo-1518444065439-e933c06ce9cd">
+<div class="card-body">
+<h3>Bluetooth Headphones</h3>
+<p class="price">300 DH</p>
+<button onclick="add(event,'Headphones')">Add</button>
+<a class="btn" target="_blank" href="https://wa.me/212706825831?text=Headphones">Buy</a>
+</div>
+</div>
+
+</div>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">X</span>
+    <img id="modalImg" width="100%">
+    <h2 id="title"></h2>
+    <p id="price"></p>
+  </div>
+</div>
+
+<footer>
+  © 2026 Best Technologie - Contact via WhatsApp
+</footer>
+
+<script>
+let cart=[];
+
+function add(e,name){
+  e.stopPropagation();
+  cart.push(name);
+  document.getElementById("count").innerText=cart.length;
+}
+
+function showCart(){
+  alert("Items in cart: "+cart.length);
+}
+
+function openModal(title,price,card){
+  document.getElementById("modal").style.display="flex";
+  document.getElementById("title").innerText=title;
+  document.getElementById("price").innerText=price;
+  document.getElementById("modalImg").src=card.querySelector("img").src;
+}
+
+function closeModal(){
+  document.getElementById("modal").style.display="none";
+}
+
+/* SEARCH */
+document.getElementById("search").addEventListener("keyup",function(){
+  let value=this.value.toLowerCase();
+  document.querySelectorAll(".card").forEach(card=>{
+    card.style.display = card.innerText.toLowerCase().includes(value) ? "block":"none";
+  });
+});
+</script>
 
 </body>
 </html>
