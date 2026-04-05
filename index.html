@@ -2,95 +2,146 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Badr Website</title>
+  <title>Electronique Badr</title>
 
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+    }
+
+    header {
+      background: #111;
       color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    nav {
+      background: #222;
+      padding: 10px;
       text-align: center;
     }
 
-    .container {
-      padding: 80px 20px;
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
     }
 
-    h1 {
-      font-size: 50px;
+    .hero {
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    .hero h2 {
       margin-bottom: 10px;
-      animation: fadeIn 2s ease-in-out;
-    }
-
-    p {
-      font-size: 20px;
-      opacity: 0.9;
-      margin-bottom: 30px;
     }
 
     .btn {
-      padding: 12px 30px;
-      background: #ff7f50;
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 20px;
+      background: #28a745;
       color: white;
-      border: none;
-      border-radius: 25px;
       text-decoration: none;
-      font-size: 16px;
-      transition: 0.3s;
+      border-radius: 5px;
     }
 
-    .btn:hover {
-      background: #ff5722;
-      transform: scale(1.1);
+    .section {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .products {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
     }
 
     .card {
-      margin-top: 40px;
-      background: rgba(255,255,255,0.1);
-      padding: 20px;
-      border-radius: 15px;
-      display: inline-block;
-      backdrop-filter: blur(10px);
+      background: white;
+      padding: 15px;
+      width: 220px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .price {
+      color: green;
+      font-weight: bold;
+      margin: 10px 0;
     }
 
     footer {
-      margin-top: 60px;
-      padding: 20px;
-      background: rgba(0,0,0,0.3);
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(-20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      background: #111;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
     }
   </style>
-</head>
 
+</head>
 <body>
 
-  <div class="container">
-    <h1>Welcome to My Website</h1>
-    <p>I am Badr, and this is my first professional web page 🚀</p>
+<header>
+  <h1>Electronique Badr ⚡</h1>
+  <p>Your electronics store</p>
+</header>
 
-    <a href="#" class="btn">Get Started</a>
+<nav>
+  <a href="#home">Home</a>
+  <a href="#products">Products</a>
+</nav>
+
+<!-- HERO -->
+<div id="home" class="hero">
+  <h2>Welcome to Electronique Badr</h2>
+  <p>Best electronic products at affordable prices</p>
+  <a href="#products" class="btn">Shop Now</a>
+</div>
+
+<!-- PRODUCTS -->
+<div id="products" class="section">
+  <h2>Our Products</h2>
+
+  <div class="products">
 
     <div class="card">
-      <h2>About Me</h2>
-      <p>I am learning web development and building my first projects.</p>
+      <img src="https://images.unsplash.com/photo-1518441902117-f0a4d5d5c5a5" alt="">
+      <h3>Casque Bluetooth</h3>
+      <p class="price">150 DH</p>
+      <a href="#" class="btn">Buy Now</a>
     </div>
-  </div>
 
-  <footer>
-    <p>© 2026 Badr | All Rights Reserved</p>
-  </footer>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1580894894513-541e068a3e2a" alt="">
+      <h3>Écoute Bluetooth</h3>
+      <p class="price">120 DH</p>
+      <a href="#" class="btn">Buy Now</a>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b" alt="">
+      <h3>Smart Watch</h3>
+      <p class="price">300 DH</p>
+      <a href="#" class="btn">Buy Now</a>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 Electronique Badr</p>
+</footer>
 
 </body>
 </html>
