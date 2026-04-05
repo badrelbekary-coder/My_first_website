@@ -10,11 +10,41 @@ body {
   font-family: Arial, sans-serif;
   background: #0a0f1f;
   color: white;
+  scroll-behavior: smooth;
 }
 
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #020617;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 30px;
+  z-index: 1000;
+}
+
+.navbar h2 {
+  margin: 0;
+  color: #38bdf8;
+}
+
+.navbar a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.navbar a:hover {
+  color: #22c55e;
+}
+
+/* Header */
 header {
   text-align: center;
-  padding: 50px 20px;
+  padding: 120px 20px 60px;
   background: linear-gradient(90deg, #2563eb, #22c55e);
 }
 
@@ -25,20 +55,20 @@ header h1 {
 
 header p {
   margin-top: 10px;
-  font-size: 18px;
-  color: #e5e7eb;
 }
 
+/* Sections */
 .section {
-  padding: 40px 20px;
+  padding: 60px 20px;
 }
 
 .section h2 {
   text-align: center;
-  margin-bottom: 25px;
   color: #38bdf8;
+  margin-bottom: 30px;
 }
 
+/* Products */
 .products {
   display: flex;
   flex-wrap: wrap;
@@ -53,7 +83,6 @@ header p {
   padding: 15px;
   text-align: center;
   transition: 0.3s;
-  box-shadow: 0 0 15px rgba(0,0,0,0.5);
 }
 
 .card:hover {
@@ -70,9 +99,9 @@ header p {
 .price {
   color: #22c55e;
   margin: 10px 0;
-  font-size: 18px;
 }
 
+/* Button */
 .btn {
   display: inline-block;
   padding: 10px 16px;
@@ -87,18 +116,30 @@ header p {
   background: #1ebe5d;
 }
 </style>
-
 </head>
 
 <body>
 
+<!-- Navbar -->
+<div class="navbar">
+  <h2>Best Technologie</h2>
+  <div>
+    <a href="#tv">TV</a>
+    <a href="#phones">Phones</a>
+    <a href="#watches">Watches</a>
+    <a href="#laptops">Laptops</a>
+    <a href="#headphones">Headphones</a>
+  </div>
+</div>
+
+<!-- Header -->
 <header>
   <h1>Best Technologie ⚡</h1>
   <p>Welcome to store Badr</p>
 </header>
 
 <!-- TVs -->
-<div class="section">
+<div class="section" id="tv">
   <h2>Televisions 📺</h2>
   <div class="products">
 
@@ -107,7 +148,7 @@ header p {
       <h3>Samsung Smart TV 55"</h3>
       <p class="price">4500 DH</p>
       <a class="btn" target="_blank"
-      href="https://wa.me/212706825831?text=I%20want%20to%20buy%20Samsung%2055%20TV">
+      href="https://wa.me/212706825831?text=I%20want%20Samsung%2055%20TV">
       Buy
       </a>
     </div>
@@ -117,7 +158,7 @@ header p {
       <h3>LG Smart TV 43"</h3>
       <p class="price">3200 DH</p>
       <a class="btn" target="_blank"
-      href="https://wa.me/212706825831?text=I%20want%20to%20buy%20LG%2043%20TV">
+      href="https://wa.me/212706825831?text=I%20want%20LG%2043%20TV">
       Buy
       </a>
     </div>
@@ -126,9 +167,86 @@ header p {
 </div>
 
 <!-- Phones -->
-<div class="section">
+<div class="section" id="phones">
   <h2>Phones 📱</h2>
   <div class="products">
 
     <div class="card">
-      <img src="https://images.unsplash.com/photo-151170717163
+      <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9">
+      <h3>iPhone 13</h3>
+      <p class="price">9000 DH</p>
+      <a class="btn" target="_blank"
+      href="https://wa.me/212706825831?text=I%20want%20iPhone%2013">
+      Buy
+      </a>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97">
+      <h3>Samsung S22</h3>
+      <p class="price">7500 DH</p>
+      <a class="btn" target="_blank"
+      href="https://wa.me/212706825831?text=I%20want%20Samsung%20S22">
+      Buy
+      </a>
+    </div>
+
+  </div>
+</div>
+
+<!-- Watches -->
+<div class="section" id="watches">
+  <h2>Smart Watches ⌚</h2>
+  <div class="products">
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b">
+      <h3>Apple Watch</h3>
+      <p class="price">3500 DH</p>
+      <a class="btn" target="_blank"
+      href="https://wa.me/212706825831?text=I%20want%20Apple%20Watch">
+      Buy
+      </a>
+    </div>
+
+  </div>
+</div>
+
+<!-- Laptops -->
+<div class="section" id="laptops">
+  <h2>Laptops 💻</h2>
+  <div class="products">
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8">
+      <h3>MacBook Pro</h3>
+      <p class="price">15000 DH</p>
+      <a class="btn" target="_blank"
+      href="https://wa.me/212706825831?text=I%20want%20MacBook%20Pro">
+      Buy
+      </a>
+    </div>
+
+  </div>
+</div>
+
+<!-- Headphones -->
+<div class="section" id="headphones">
+  <h2>Headphones 🎧</h2>
+  <div class="products">
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1580894908361-967195033215">
+      <h3>Bluetooth Headphones</h3>
+      <p class="price">250 DH</p>
+      <a class="btn" target="_blank"
+      href="https://wa.me/212706825831?text=I%20want%20Bluetooth%20Headphones">
+      Buy
+      </a>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>unsplash.com/photo-151170717163
