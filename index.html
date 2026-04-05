@@ -6,192 +6,127 @@
 
 <style>
 body {
-  margin: 0;
-  font-family: Arial;
-  background: #000;
-  color: white;
+  margin:0;
+  font-family:Arial;
+  background:#000;
+  color:white;
 }
 
-/* Navbar */
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  padding: 15px 30px;
-  background: #0f172a;
-  position: sticky;
-  top: 0;
+  display:flex;
+  justify-content:space-between;
+  padding:15px 30px;
+  background:#0f172a;
 }
 
-.navbar h2 {
-  color: #38bdf8;
+.section-title {
+  text-align:center;
+  margin-top:30px;
+  color:#38bdf8;
 }
 
-.navbar a {
-  color: white;
-  margin-left: 20px;
-  text-decoration: none;
-}
-
-/* Header */
-header {
-  text-align: center;
-  padding: 80px 20px;
-  background: linear-gradient(90deg,#111,#1e293b);
-}
-
-header h1 {
-  font-size: 40px;
-}
-
-/* Products */
 .products {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
-  gap: 15px;
-  padding: 20px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:15px;
+  padding:20px;
 }
 
 .card {
-  background: #111827;
-  border-radius: 10px;
-  padding: 10px;
-  transition: 0.3s;
+  background:#111827;
+  border-radius:10px;
+  padding:10px;
+  transition:0.3s;
 }
 
 .card:hover {
-  transform: scale(1.05);
+  transform:scale(1.05);
 }
 
 .card img {
-  width: 100%;
-  border-radius: 10px;
+  width:100%;
+  border-radius:10px;
 }
 
 .price {
-  color: #22c55e;
+  color:#22c55e;
 }
 
-/* Button */
 .btn {
-  display: block;
-  text-align: center;
-  padding: 10px;
-  background: #25D366;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  margin-top: 10px;
-}
-
-/* Section title */
-.section-title {
-  text-align: center;
-  margin-top: 30px;
-  font-size: 25px;
-  color: #38bdf8;
+  display:block;
+  text-align:center;
+  padding:10px;
+  background:#25D366;
+  color:white;
+  text-decoration:none;
+  border-radius:5px;
 }
 </style>
-
 </head>
 
 <body>
 
 <div class="navbar">
   <h2>Best Technologie</h2>
-  <div>
-    <a href="#tv">TV</a>
-    <a href="#phones">Phones</a>
-    <a href="#laptops">Laptops</a>
-    <a href="#audio">Audio</a>
-  </div>
 </div>
 
-<header>
-  <h1>Welcome to Store Badr ⚡</h1>
-  <p>Best Electronic Deals</p>
-</header>
-
-<!-- TV -->
-<h2 class="section-title" id="tv">Televisions 📺</h2>
+<!-- SMART WATCH -->
+<h2 class="section-title">Smart Watches ⌚</h2>
 <div class="products">
 
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1593359677879-a4bb92f829d1">
-    <h3>Samsung Smart TV 55"</h3>
-    <p class="price">4500 DH</p>
-    <a class="btn" target="_blank"
-    href="https://wa.me/212706825831?text=I%20want%20Samsung%2055%20TV">
-    Buy on WhatsApp
-    </a>
-  </div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b">
+<h3>Amazfit Smart Watch</h3>
+<p class="price">650 DH</p>
+<a class="btn" href="https://wa.me/212706825831?text=I%20want%20Amazfit%20Watch">Buy</a>
+</div>
 
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1580894908361-967195033215">
-    <h3>LG Smart TV 43"</h3>
-    <p class="price">3200 DH</p>
-    <a class="btn" target="_blank"
-    href="https://wa.me/212706825831?text=I%20want%20LG%2043%20TV">
-    Buy on WhatsApp
-    </a>
-  </div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30">
+<h3>Huawei Watch Fit</h3>
+<p class="price">900 DH</p>
+<a class="btn" href="https://wa.me/212706825831?text=I%20want%20Huawei%20Watch">Buy</a>
+</div>
 
 </div>
 
-<!-- Phones -->
-<h2 class="section-title" id="phones">Phones 📱</h2>
+<!-- LAPTOPS -->
+<h2 class="section-title">Laptops 💻</h2>
 <div class="products">
 
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9">
-    <h3>iPhone 13</h3>
-    <p class="price">9000 DH</p>
-    <a class="btn" target="_blank"
-    href="https://wa.me/212706825831?text=I%20want%20iPhone%2013">
-    Buy on WhatsApp
-    </a>
-  </div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8">
+<h3>HP Laptop i5</h3>
+<p class="price">5200 DH</p>
+<a class="btn" href="https://wa.me/212706825831?text=I%20want%20HP%20Laptop">Buy</a>
+</div>
 
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97">
-    <h3>Samsung S22</h3>
-    <p class="price">7500 DH</p>
-    <a class="btn" target="_blank"
-    href="https://wa.me/212706825831?text=I%20want%20Samsung%20S22">
-    Buy on WhatsApp
-    </a>
-  </div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853">
+<h3>Dell Inspiron 15</h3>
+<p class="price">6000 DH</p>
+<a class="btn" href="https://wa.me/212706825831?text=I%20want%20Dell%20Laptop">Buy</a>
+</div>
 
 </div>
 
-<!-- Laptops -->
-<h2 class="section-title" id="laptops">Laptops 💻</h2>
+<!-- HEADPHONES -->
+<h2 class="section-title">Bluetooth Headphones 🎧</h2>
 <div class="products">
 
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8">
-    <h3>MacBook Pro</h3>
-    <p class="price">15000 DH</p>
-    <a class="btn" target="_blank"
-    href="https://wa.me/212706825831?text=I%20want%20MacBook%20Pro">
-    Buy on WhatsApp
-    </a>
-  </div>
-
+<div class="card">
+<img src="https://images.unsplash.com/photo-1518444065439-e933c06ce9cd">
+<h3>JBL Bluetooth Headphones</h3>
+<p class="price">350 DH</p>
+<a class="btn" href="https://wa.me/212706825831?text=I%20want%20JBL%20Headphones">Buy</a>
 </div>
 
-<!-- Audio -->
-<h2 class="section-title" id="audio">Headphones 🎧</h2>
-<div class="products">
-
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1518444065439-e933c06ce9cd">
-    <h3>Bluetooth Headphones</h3>
-    <p class="price">250 DH</p>
-    <a class="btn" target="_blank"
-    href="https://wa.me/212706825831?text=I%20want%20Headphones">
-    Buy on WhatsApp
-    </a>
-  </div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1585386959984-a41552262d92">
+<h3>AirPods Pro Copy</h3>
+<p class="price">250 DH</p>
+<a class="btn" href="https://wa.me/212706825831?text=I%20want%20AirPods">Buy</a>
+</div>
 
 </div>
 
