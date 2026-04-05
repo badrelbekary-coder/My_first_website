@@ -2,25 +2,25 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Electronique Badr</title>
+  <title>Badr Reda Technologie</title>
 
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #0b1220;
+      background: #0f172a;
       color: white;
     }
 
     header {
       text-align: center;
       padding: 40px;
-      background: linear-gradient(90deg, #06b6d4, #22c55e);
+      background: linear-gradient(90deg, #3b82f6, #22c55e);
     }
 
     header h1 {
       margin: 0;
-      font-size: 42px;
+      font-size: 40px;
     }
 
     header p {
@@ -28,29 +28,29 @@
       font-size: 18px;
     }
 
-    .products {
+    .container {
       display: flex;
-      justify-content: center;
       flex-wrap: wrap;
-      padding: 40px;
+      justify-content: center;
+      padding: 30px;
       gap: 20px;
     }
 
-    .product {
-      background: #111827;
+    .card {
+      background: #1e293b;
       border-radius: 15px;
-      width: 280px;
+      width: 300px;
       padding: 15px;
       text-align: center;
-      box-shadow: 0 0 15px rgba(0,0,0,0.6);
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
       transition: 0.3s;
     }
 
-    .product:hover {
-      transform: translateY(-8px);
+    .card:hover {
+      transform: scale(1.05);
     }
 
-    .product img {
+    .card img {
       width: 100%;
       height: 200px;
       object-fit: cover;
@@ -60,6 +60,68 @@
     .price {
       color: #22c55e;
       font-size: 20px;
-      margin: 10px
+      margin: 10px 0;
+    }
 
-  
+    .btn {
+      display: inline-block;
+      padding: 10px 18px;
+      background: #25D366;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    .btn:hover {
+      background: #1ebe5d;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Badr Reda Technologie 📺</h1>
+  <p>Smart TVs & Electronics Store</p>
+</header>
+
+<div class="container">
+
+  <!-- TV 1 -->
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1593359677879-a4bb92f829d1" alt="">
+    <h2>Samsung Smart TV 55"</h2>
+    <p class="price">4500 DH</p>
+    <a class="btn" target="_blank"
+      href="https://wa.me/212706825831?text=Bonjour%20je%20veux%20acheter%20Samsung%2055%20TV">
+      Buy on WhatsApp
+    </a>
+  </div>
+
+  <!-- TV 2 -->
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1593784991095-a205069470b6" alt="">
+    <h2>LG Smart TV 50"</h2>
+    <p class="price">4000 DH</p>
+    <a class="btn" target="_blank"
+      href="https://wa.me/212706825831?text=Bonjour%20je%20veux%20acheter%20LG%2050%20TV">
+      Buy on WhatsApp
+    </a>
+  </div>
+
+  <!-- TV 3 -->
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1580894908361-967195033215" alt="">
+    <h2>Android Smart TV 43"</h2>
+    <p class="price">3200 DH</p>
+    <a class="btn" target="_blank"
+      href="https://wa.me/212706825831?text=Bonjour%20je%20veux%20acheter%20Android%2043%20TV">
+      Buy on WhatsApp
+    </a>
+  </div>
+
+</div>
+
+</body>
+</html>
