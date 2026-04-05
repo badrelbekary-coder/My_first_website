@@ -1,12 +1,96 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>My First Website</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Badr Website</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color: white;
+      text-align: center;
+    }
+
+    .container {
+      padding: 80px 20px;
+    }
+
+    h1 {
+      font-size: 50px;
+      margin-bottom: 10px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    p {
+      font-size: 20px;
+      opacity: 0.9;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      padding: 12px 30px;
+      background: #ff7f50;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      text-decoration: none;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #ff5722;
+      transform: scale(1.1);
+    }
+
+    .card {
+      margin-top: 40px;
+      background: rgba(255,255,255,0.1);
+      padding: 20px;
+      border-radius: 15px;
+      display: inline-block;
+      backdrop-filter: blur(10px);
+    }
+
+    footer {
+      margin-top: 60px;
+      padding: 20px;
+      background: rgba(0,0,0,0.3);
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-  <h1>Hello 👋</h1>
-<p>This is my first website</p>
+  <div class="container">
+    <h1>Welcome to My Website</h1>
+    <p>I am Badr, and this is my first professional web page 🚀</p>
+
+    <a href="#" class="btn">Get Started</a>
+
+    <div class="card">
+      <h2>About Me</h2>
+      <p>I am learning web development and building my first projects.</p>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2026 Badr | All Rights Reserved</p>
+  </footer>
 
 </body>
 </html>
