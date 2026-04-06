@@ -1,303 +1,183 @@
-<!DOCTYPE html>
+
+  <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ultimate Tech Store</title>
+<title>Wissal Farage Fashion</title>
 
 <style>
-body{
+*{
   margin:0;
+  padding:0;
+  box-sizing:border-box;
   font-family:Arial;
-  background:#0b0f1a;
+}
+
+body{
+  background:linear-gradient(to right,#ffb6c1,#ffc0cb);
+  color:#333;
+}
+
+/* NAVBAR */
+.navbar{
+  background:white;
+  padding:15px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  box-shadow:0 5px 10px rgba(0,0,0,0.1);
+}
+
+.logo{
+  font-size:24px;
+  font-weight:bold;
+  color:#ff1493;
+}
+
+/* HEADER */
+.header{
+  text-align:center;
+  padding:40px;
+}
+
+.header h1{
+  font-size:40px;
   color:#fff;
 }
 
-nav{
-  display:flex;
-  justify-content:space-between;
-  padding:15px;
-  background:#11182a;
+.header p{
+  color:#fff;
+  margin-top:10px;
 }
 
-.logo{color:#00d4ff;font-size:20px;font-weight:bold;}
-
-button{
-  cursor:pointer;
-}
-
-/* Tabs */
-.tabs{
-  display:flex;
-  justify-content:center;
-  margin:15px;
-}
-
-.tabs button{
-  margin:5px;
-  padding:10px;
-  border:none;
-  background:#00d4ff;
-  border-radius:5px;
-}
-
-/* Sections */
-.section{
-  display:none;
-  padding:20px;
-}
-
-.active{
-  display:block;
-}
-
-/* Products */
+/* PRODUCTS */
 .products{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
   gap:20px;
+  padding:30px;
 }
 
 .card{
-  background:#11182a;
-  padding:15px;
-  border-radius:10px;
+  background:white;
+  border-radius:15px;
+  overflow:hidden;
+  box-shadow:0 10px 20px rgba(0,0,0,0.1);
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:scale(1.05);
 }
 
 .card img{
   width:100%;
-  height:150px;
+  height:250px;
   object-fit:cover;
 }
 
-/* Cart */
-.cart{
-  position:fixed;
-  right:10px;
-  top:70px;
-  width:300px;
-  background:#11182a;
+.card h3{
   padding:10px;
+}
+
+.price{
+  color:#ff1493;
+  font-weight:bold;
+  padding:0 10px;
+}
+
+.btn{
+  display:block;
+  text-align:center;
+  background:#25D366;
+  color:white;
+  padding:10px;
+  margin:10px;
   border-radius:10px;
-  display:none;
+  text-decoration:none;
+  transition:0.3s;
 }
 
-.remove{
-  color:red;
-  cursor:pointer;
+.btn:hover{
+  background:#1ebe5d;
 }
 
-/* Login */
-.login-box{
-  max-width:300px;
-  margin:auto;
-  background:#11182a;
+/* FOOTER */
+.footer{
+  text-align:center;
   padding:20px;
-  border-radius:10px;
+  color:white;
 }
-
-input{
-  width:100%;
-  margin:5px 0;
-  padding:8px;
-  border:none;
-  border-radius:5px;
-}
-
 </style>
+
 </head>
 
 <body>
 
-<nav>
-  <div class="logo">Ultimate Store</div>
-  <div>
-    <button onclick="toggleCart()">Cart</button>
-    <button onclick="logout()">Logout</button>
-  </div>
-</nav>
-
-<div class="tabs">
-  <button onclick="showSection('shop')">Shop</button>
-  <button onclick="showSection('admin')">Admin</button>
-  <button onclick="showSection('login')">Login</button>
+<div class="navbar">
+  <div class="logo">Wissal Farage Fashion</div>
 </div>
 
-<!-- LOGIN -->
-<div id="login" class="section active">
-  <div class="login-box">
-    <h3>Login</h3>
-    <input id="user" placeholder="Username">
-    <input id="pass" type="password" placeholder="Password">
-    <button onclick="login()">Login</button>
-  </div>
+<div class="header">
+  <h1>🔥 Trendy Fashion Store</h1>
+  <p>Best Baggy Jeans & Sneakers</p>
 </div>
 
-<!-- SHOP -->
-<div id="shop" class="section">
-  <div class="products" id="products"></div>
+<div class="products">
+
+<!-- PRODUCT 1 -->
+<div class="card">
+  <img src="https://images.unsplash.com/photo-1582418702059-97ebafb35d09">
+  <h3>Baggy Jeans Blue</h3>
+  <p class="price">299 DH</p>
+  <a class="btn" href="https://wa.me/212706825831?text=I want Baggy Jeans Blue 299DH">Buy Now</a>
 </div>
 
-<!-- ADMIN -->
-<div id="admin" class="section">
-  <h3>Add Product</h3>
-  <input id="pname" placeholder="Name">
-  <input id="pprice" placeholder="Price">
-  <input id="pimg" placeholder="Image URL">
-  <button onclick="addProduct()">Add</button>
-
-  <h3>Product List</h3>
-  <div id="adminList"></div>
+<!-- PRODUCT 2 -->
+<div class="card">
+  <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b">
+  <h3>Black Baggy Jeans</h3>
+  <p class="price">320 DH</p>
+  <a class="btn" href="https://wa.me/212706825831?text=I want Black Baggy Jeans 320DH">Buy Now</a>
 </div>
 
-<!-- CART -->
-<div class="cart" id="cart">
-  <h3>Cart</h3>
-  <div id="cartItems"></div>
-  <div id="total"></div>
+<!-- PRODUCT 3 -->
+<div class="card">
+  <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff">
+  <h3>White Sneakers</h3>
+  <p class="price">450 DH</p>
+  <a class="btn" href="https://wa.me/212706825831?text=I want White Sneakers 450DH">Buy Now</a>
 </div>
 
-<script>
-let products = JSON.parse(localStorage.getItem("products")) || [];
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
-let loggedIn = false;
+<!-- PRODUCT 4 -->
+<div class="card">
+  <img src="https://images.unsplash.com/photo-1600180758890-6b94519a8ba6">
+  <h3>Nike Style Sneakers</h3>
+  <p class="price">520 DH</p>
+  <a class="btn" href="https://wa.me/212706825831?text=I want Nike Sneakers 520DH">Buy Now</a>
+</div>
 
-/* INIT DEFAULT PRODUCTS */
-if(products.length === 0){
-  products = [
-    {name:"Watch", price:200, img:"https://via.placeholder.com/300"},
-    {name:"Headphones", price:150, img:"https://via.placeholder.com/300"}
-  ];
-  localStorage.setItem("products", JSON.stringify(products));
-}
+<!-- PRODUCT 5 -->
+<div class="card">
+  <img src="https://images.unsplash.com/photo-1593032465171-8f4c3b8e4c73">
+  <h3>Oversize Baggy Jeans</h3>
+  <p class="price">350 DH</p>
+  <a class="btn" href="https://wa.me/212706825831?text=I want Oversize Jeans 350DH">Buy Now</a>
+</div>
 
-/* LOGIN */
-function login(){
-  const u = document.getElementById("user").value;
-  const p = document.getElementById("pass").value;
+<!-- PRODUCT 6 -->
+<div class="card">
+  <img src="https://images.unsplash.com/photo-1606813907291-d86efa9b94db">
+  <h3>Street Sneakers</h3>
+  <p class="price">480 DH</p>
+  <a class="btn" href="https://wa.me/212706825831?text=I want Street Sneakers 480DH">Buy Now</a>
+</div>
 
-  if(u==="admin" && p==="1234"){
-    loggedIn = true;
-    alert("Login success");
-    showSection("shop");
-  }else{
-    alert("Wrong credentials");
-  }
-}
+</div>
 
-function logout(){
-  loggedIn = false;
-  alert("Logged out");
-}
-
-/* SECTIONS */
-function showSection(id){
-  document.querySelectorAll(".section").forEach(s=>s.classList.remove("active"));
-  document.getElementById(id).classList.add("active");
-
-  if(id==="shop") displayProducts();
-  if(id==="admin") displayAdmin();
-}
-
-/* PRODUCTS */
-function displayProducts(){
-  const div = document.getElementById("products");
-  div.innerHTML = "";
-
-  products.forEach((p,i)=>{
-    div.innerHTML += `
-      <div class="card">
-        <img src="${p.img}">
-        <h4>${p.name}</h4>
-        <p>$${p.price}</p>
-        <button onclick="addToCart(${i})">Add</button>
-      </div>
-    `;
-  });
-}
-
-/* ADMIN */
-function addProduct(){
-  if(!loggedIn){
-    alert("Login required");
-    return;
-  }
-
-  const name = document.getElementById("pname").value;
-  const price = document.getElementById("pprice").value;
-  const img = document.getElementById("pimg").value;
-
-  products.push({name, price, img});
-  localStorage.setItem("products", JSON.stringify(products));
-
-  displayProducts();
-  displayAdmin();
-}
-
-function displayAdmin(){
-  const div = document.getElementById("adminList");
-  div.innerHTML = "";
-
-  products.forEach((p,i)=>{
-    div.innerHTML += `
-      <div>
-        ${p.name} - $${p.price}
-        <button onclick="deleteProduct(${i})">Delete</button>
-      </div>
-    `;
-  });
-}
-
-function deleteProduct(i){
-  products.splice(i,1);
-  localStorage.setItem("products", JSON.stringify(products));
-  displayAdmin();
-  displayProducts();
-}
-
-/* CART */
-function addToCart(i){
-  cart.push(products[i]);
-  localStorage.setItem("cart", JSON.stringify(cart));
-  updateCart();
-}
-
-function updateCart(){
-  const div = document.getElementById("cartItems");
-  const totalEl = document.getElementById("total");
-
-  div.innerHTML = "";
-  let total = 0;
-
-  cart.forEach((item,i)=>{
-    total += Number(item.price);
-
-    div.innerHTML += `
-      <div>
-        ${item.name} - $${item.price}
-        <span class="remove" onclick="removeItem(${i})">X</span>
-      </div>
-    `;
-  });
-
-  totalEl.innerText = "Total: $" + total;
-}
-
-function removeItem(i){
-  cart.splice(i,1);
-  localStorage.setItem("cart", JSON.stringify(cart));
-  updateCart();
-}
-
-function toggleCart(){
-  const c = document.getElementById("cart");
-  c.style.display = c.style.display === "block" ? "none" : "block";
-}
-
-/* INIT */
-displayProducts();
-updateCart();
-</script>
+<div class="footer">
+  © 2026 Wissal Farage Fashion - All Rights Reserved
+</div>
 
 </body>
 </html>
