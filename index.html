@@ -1,183 +1,228 @@
-
-  <!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>Wissal Farage Fashion</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>STOR BADR ET ANIS</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
+
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:Arial;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
 }
 
 body{
-  background:linear-gradient(to right,#ffb6c1,#ffc0cb);
-  color:#333;
+    background:#0f172a;
+    color:white;
 }
 
-/* NAVBAR */
-.navbar{
-  background:white;
-  padding:15px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  box-shadow:0 5px 10px rgba(0,0,0,0.1);
+header{
+    background:linear-gradient(135deg,#2563eb,#06b6d4);
+    padding:80px 20px;
+    text-align:center;
 }
 
-.logo{
-  font-size:24px;
-  font-weight:bold;
-  color:#ff1493;
+header h1{
+    font-size:55px;
+    margin-bottom:15px;
 }
 
-/* HEADER */
-.header{
-  text-align:center;
-  padding:40px;
+header p{
+    font-size:22px;
 }
 
-.header h1{
-  font-size:40px;
-  color:#fff;
-}
-
-.header p{
-  color:#fff;
-  margin-top:10px;
-}
-
-/* PRODUCTS */
 .products{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
-  padding:30px;
+    width:90%;
+    margin:auto;
+    padding:60px 0;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
 }
 
 .card{
-  background:white;
-  border-radius:15px;
-  overflow:hidden;
-  box-shadow:0 10px 20px rgba(0,0,0,0.1);
-  transition:0.3s;
+    background:#1e293b;
+    border-radius:20px;
+    overflow:hidden;
+    transition:0.4s;
+    box-shadow:0 10px 25px rgba(0,0,0,0.4);
 }
 
 .card:hover{
-  transform:scale(1.05);
+    transform:translateY(-12px);
 }
 
 .card img{
-  width:100%;
-  height:250px;
-  object-fit:cover;
+    width:100%;
+    height:250px;
+    object-fit:cover;
 }
 
-.card h3{
-  padding:10px;
+.card-content{
+    padding:20px;
+}
+
+.card h2{
+    margin-bottom:10px;
 }
 
 .price{
-  color:#ff1493;
-  font-weight:bold;
-  padding:0 10px;
+    color:#38bdf8;
+    font-size:24px;
+    font-weight:bold;
+    margin:15px 0;
 }
 
 .btn{
-  display:block;
-  text-align:center;
-  background:#25D366;
-  color:white;
-  padding:10px;
-  margin:10px;
-  border-radius:10px;
-  text-decoration:none;
-  transition:0.3s;
+    display:inline-block;
+    background:#25D366;
+    color:white;
+    text-decoration:none;
+    padding:12px 25px;
+    border-radius:10px;
+    font-weight:bold;
+    transition:0.3s;
 }
 
 .btn:hover{
-  background:#1ebe5d;
+    background:#1ebe5d;
 }
 
-/* FOOTER */
-.footer{
-  text-align:center;
-  padding:20px;
-  color:white;
+.features{
+    background:#111827;
+    padding:70px 20px;
+    text-align:center;
 }
+
+.features h2{
+    font-size:40px;
+    margin-bottom:40px;
+}
+
+.feature-box{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:25px;
+}
+
+.feature{
+    background:#1e293b;
+    padding:30px;
+    width:260px;
+    border-radius:15px;
+}
+
+footer{
+    text-align:center;
+    padding:30px;
+    background:#020617;
+}
+
 </style>
 
 </head>
-
 <body>
 
-<div class="navbar">
-  <div class="logo">Wissal Farage Fashion</div>
-</div>
+<header>
+    <h1>STOR BADR ET ANIS</h1>
+    <p>Votre magasin professionnel des appareils électroniques</p>
+</header>
 
-<div class="header">
-  <h1>🔥 Trendy Fashion Store</h1>
-  <p>Best Baggy Jeans & Sneakers</p>
-</div>
+<section class="products">
 
-<div class="products">
-
-<!-- PRODUCT 1 -->
 <div class="card">
-  <img src="https://images.unsplash.com/photo-1582418702059-97ebafb35d09">
-  <h3>Baggy Jeans Blue</h3>
-  <p class="price">299 DH</p>
-  <a class="btn" href="https://wa.me/212706825831?text=I want Baggy Jeans Blue 299DH">Buy Now</a>
+<img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800" alt="">
+<div class="card-content">
+<h2>iPhone 16 Pro Max</h2>
+<p>Le smartphone le plus puissant avec des performances incroyables.</p>
+<div class="price">14999 DH</div>
+<a class="btn" href="https://wa.me/212770185631?text=Bonjour%20je%20veux%20acheter%20iPhone%2016%20Pro%20Max" target="_blank">
+Acheter sur WhatsApp
+</a>
+</div>
 </div>
 
-<!-- PRODUCT 2 -->
 <div class="card">
-  <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b">
-  <h3>Black Baggy Jeans</h3>
-  <p class="price">320 DH</p>
-  <a class="btn" href="https://wa.me/212706825831?text=I want Black Baggy Jeans 320DH">Buy Now</a>
+<img src="https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=800" alt="">
+<div class="card-content">
+<h2>Gaming Laptop RTX</h2>
+<p>Ordinateur portable ultra performant pour gaming et travail.</p>
+<div class="price">12999 DH</div>
+<a class="btn" href="https://wa.me/212770185631?text=Bonjour%20je%20veux%20acheter%20Gaming%20Laptop" target="_blank">
+Acheter sur WhatsApp
+</a>
+</div>
 </div>
 
-<!-- PRODUCT 3 -->
 <div class="card">
-  <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff">
-  <h3>White Sneakers</h3>
-  <p class="price">450 DH</p>
-  <a class="btn" href="https://wa.me/212706825831?text=I want White Sneakers 450DH">Buy Now</a>
+<img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?w=800" alt="">
+<div class="card-content">
+<h2>PlayStation 5</h2>
+<p>La console nouvelle génération avec graphismes exceptionnels.</p>
+<div class="price">6499 DH</div>
+<a class="btn" href="https://wa.me/212770185631?text=Bonjour%20je%20veux%20acheter%20PlayStation%205" target="_blank">
+Acheter sur WhatsApp
+</a>
+</div>
 </div>
 
-<!-- PRODUCT 4 -->
 <div class="card">
-  <img src="https://images.unsplash.com/photo-1600180758890-6b94519a8ba6">
-  <h3>Nike Style Sneakers</h3>
-  <p class="price">520 DH</p>
-  <a class="btn" href="https://wa.me/212706825831?text=I want Nike Sneakers 520DH">Buy Now</a>
+<img src="https://images.unsplash.com/photo-1517336714739-489689fd1ca8?w=800" alt="">
+<div class="card-content">
+<h2>MacBook Pro M4</h2>
+<p>Puissance et élégance pour les professionnels.</p>
+<div class="price">18999 DH</div>
+<a class="btn" href="https://wa.me/212770185631?text=Bonjour%20je%20veux%20acheter%20MacBook%20Pro%20M4" target="_blank">
+Acheter sur WhatsApp
+</a>
+</div>
 </div>
 
-<!-- PRODUCT 5 -->
-<div class="card">
-  <img src="https://images.unsplash.com/photo-1593032465171-8f4c3b8e4c73">
-  <h3>Oversize Baggy Jeans</h3>
-  <p class="price">350 DH</p>
-  <a class="btn" href="https://wa.me/212706825831?text=I want Oversize Jeans 350DH">Buy Now</a>
+</section>
+
+<section class="features">
+
+<h2>Pourquoi choisir STOR BADR ET ANIS ?</h2>
+
+<div class="feature-box">
+
+<div class="feature">
+<h3>🚚 Livraison rapide</h3>
+<p>Livraison partout au Maroc.</p>
 </div>
 
-<!-- PRODUCT 6 -->
-<div class="card">
-  <img src="https://images.unsplash.com/photo-1606813907291-d86efa9b94db">
-  <h3>Street Sneakers</h3>
-  <p class="price">480 DH</p>
-  <a class="btn" href="https://wa.me/212706825831?text=I want Street Sneakers 480DH">Buy Now</a>
+<div class="feature">
+<h3>🛡 Garantie</h3>
+<p>Tous nos produits sont garantis.</p>
+</div>
+
+<div class="feature">
+<h3>💳 Paiement sécurisé</h3>
+<p>Transactions fiables et sécurisées.</p>
+</div>
+
+<div class="feature">
+<h3>📞 Support 24/7</h3>
+<p>Nous sommes disponibles à tout moment.</p>
 </div>
 
 </div>
 
-<div class="footer">
-  © 2026 Wissal Farage Fashion - All Rights Reserved
-</div>
+</section>
+
+<footer>
+<h2>STOR BADR ET ANIS</h2>
+<p>WhatsApp : +212 770 185 631</p>
+<p>© 2026 Tous droits réservés.</p>
+</footer>
 
 </body>
 </html>
