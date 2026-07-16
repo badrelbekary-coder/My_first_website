@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>STOR BADR ET ANIS</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,216 +11,350 @@
 <style>
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
 }
 
 body{
-    background:#0f172a;
-    color:white;
+background:#0f172a;
+color:white;
 }
 
-header{
-    background:linear-gradient(135deg,#2563eb,#06b6d4);
-    padding:80px 20px;
-    text-align:center;
+nav{
+position:fixed;
+top:0;
+width:100%;
+padding:20px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(15,23,42,.95);
+backdrop-filter:blur(10px);
+z-index:1000;
 }
 
-header h1{
-    font-size:55px;
-    margin-bottom:15px;
+.logo{
+font-size:28px;
+font-weight:700;
+color:#38bdf8;
 }
 
-header p{
-    font-size:22px;
+nav ul{
+display:flex;
+list-style:none;
+gap:25px;
+}
+
+nav ul li a{
+color:white;
+text-decoration:none;
+font-weight:500;
+transition:.3s;
+}
+
+nav ul li a:hover{
+color:#38bdf8;
+}
+
+.hero{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80');
+background-size:cover;
+background-position:center;
+}
+
+.hero-content h1{
+font-size:70px;
+margin-bottom:20px;
+}
+
+.hero-content p{
+font-size:24px;
+margin-bottom:30px;
+}
+
+.hero-btn{
+padding:15px 35px;
+background:#38bdf8;
+color:white;
+text-decoration:none;
+border-radius:50px;
+font-size:18px;
+font-weight:600;
+transition:.3s;
+}
+
+.hero-btn:hover{
+transform:scale(1.1);
+}
+
+.section-title{
+text-align:center;
+font-size:45px;
+margin:80px 0 50px;
 }
 
 .products{
-    width:90%;
-    margin:auto;
-    padding:60px 0;
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:30px;
+width:90%;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+padding-bottom:80px;
 }
 
 .card{
-    background:#1e293b;
-    border-radius:20px;
-    overflow:hidden;
-    transition:0.4s;
-    box-shadow:0 10px 25px rgba(0,0,0,0.4);
+background:#1e293b;
+border-radius:20px;
+overflow:hidden;
+transition:.4s;
+box-shadow:0 10px 25px rgba(0,0,0,.4);
 }
 
 .card:hover{
-    transform:translateY(-12px);
+transform:translateY(-15px);
 }
 
 .card img{
-    width:100%;
-    height:250px;
-    object-fit:cover;
+width:100%;
+height:250px;
+object-fit:cover;
 }
 
 .card-content{
-    padding:20px;
+padding:20px;
 }
 
-.card h2{
-    margin-bottom:10px;
+.card h3{
+margin-bottom:10px;
 }
 
 .price{
-    color:#38bdf8;
-    font-size:24px;
-    font-weight:bold;
-    margin:15px 0;
+font-size:25px;
+color:#38bdf8;
+margin:15px 0;
+font-weight:bold;
 }
 
-.btn{
-    display:inline-block;
-    background:#25D366;
-    color:white;
-    text-decoration:none;
-    padding:12px 25px;
-    border-radius:10px;
-    font-weight:bold;
-    transition:0.3s;
+.buy-btn{
+display:inline-block;
+padding:12px 25px;
+background:#25D366;
+color:white;
+text-decoration:none;
+border-radius:10px;
+font-weight:bold;
+transition:.3s;
 }
 
-.btn:hover{
-    background:#1ebe5d;
+.buy-btn:hover{
+background:#1fb857;
 }
 
 .features{
-    background:#111827;
-    padding:70px 20px;
-    text-align:center;
+background:#111827;
+padding:80px 10%;
 }
 
-.features h2{
-    font-size:40px;
-    margin-bottom:40px;
-}
-
-.feature-box{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:25px;
+.feature-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
 }
 
 .feature{
-    background:#1e293b;
-    padding:30px;
-    width:260px;
-    border-radius:15px;
+background:#1e293b;
+padding:30px;
+border-radius:20px;
+text-align:center;
+}
+
+.contact{
+padding:80px 10%;
+text-align:center;
+}
+
+.contact a{
+display:inline-block;
+padding:18px 35px;
+background:#25D366;
+color:white;
+text-decoration:none;
+border-radius:50px;
+font-size:20px;
+font-weight:bold;
 }
 
 footer{
-    text-align:center;
-    padding:30px;
-    background:#020617;
+background:#020617;
+padding:30px;
+text-align:center;
+margin-top:50px;
+}
+
+@media(max-width:768px){
+
+.hero-content h1{
+font-size:42px;
+}
+
+.hero-content p{
+font-size:18px;
+}
+
+nav{
+flex-direction:column;
+gap:15px;
+}
+
 }
 
 </style>
-
 </head>
+
 <body>
 
-<header>
-    <h1>STOR BADR ET ANIS</h1>
-    <p>Votre magasin professionnel des appareils électroniques</p>
-</header>
+<nav>
+<div class="logo">STOR BADR ET ANIS</div>
+
+<ul>
+<li><a href="#products">Produits</a></li>
+<li><a href="#features">Services</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+<section class="hero">
+<div class="hero-content">
+<h1>STOR BADR ET ANIS</h1>
+<p>Votre destination pour les meilleurs appareils électroniques au Maroc</p>
+<a href="#products" class="hero-btn">Découvrir nos produits</a>
+</div>
+</section>
+
+<h2 class="section-title" id="products">Nos Produits</h2>
 
 <section class="products">
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800" alt="">
+<img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800">
 <div class="card-content">
-<h2>iPhone 16 Pro Max</h2>
-<p>Le smartphone le plus puissant avec des performances incroyables.</p>
+<h3>iPhone 16 Pro Max</h3>
+<p>Le smartphone le plus avancé d'Apple.</p>
 <div class="price">14999 DH</div>
-<a class="btn" href="https://wa.me/212770185631?text=Bonjour%20je%20veux%20acheter%20iPhone%2016%20Pro%20Max" target="_blank">
-Acheter sur WhatsApp
+<a class="buy-btn" href="https://wa.me/212770185637?text=Bonjour%20je%20souhaite%20acheter%20un%20iPhone%2016%20Pro%20Max" target="_blank">
+Acheter
 </a>
 </div>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=800" alt="">
+<img src="https://images.unsplash.com/photo-1517336714739-489689fd1ca8?w=800">
 <div class="card-content">
-<h2>Gaming Laptop RTX</h2>
-<p>Ordinateur portable ultra performant pour gaming et travail.</p>
-<div class="price">12999 DH</div>
-<a class="btn" href="https://wa.me/212770185631?text=Bonjour%20je%20veux%20acheter%20Gaming%20Laptop" target="_blank">
-Acheter sur WhatsApp
-</a>
-</div>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?w=800" alt="">
-<div class="card-content">
-<h2>PlayStation 5</h2>
-<p>La console nouvelle génération avec graphismes exceptionnels.</p>
-<div class="price">6499 DH</div>
-<a class="btn" href="https://wa.me/212770185631?text=Bonjour%20je%20veux%20acheter%20PlayStation%205" target="_blank">
-Acheter sur WhatsApp
-</a>
-</div>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1517336714739-489689fd1ca8?w=800" alt="">
-<div class="card-content">
-<h2>MacBook Pro M4</h2>
-<p>Puissance et élégance pour les professionnels.</p>
+<h3>MacBook Pro M4</h3>
+<p>Performance professionnelle exceptionnelle.</p>
 <div class="price">18999 DH</div>
-<a class="btn" href="https://wa.me/212770185631?text=Bonjour%20je%20veux%20acheter%20MacBook%20Pro%20M4" target="_blank">
-Acheter sur WhatsApp
+<a class="buy-btn" href="https://wa.me/212770185637?text=Bonjour%20je%20souhaite%20acheter%20un%20MacBook%20Pro%20M4" target="_blank">
+Acheter
+</a>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1606813907291-d86efa9b94db?w=800">
+<div class="card-content">
+<h3>PlayStation 5</h3>
+<p>La console nouvelle génération.</p>
+<div class="price">6499 DH</div>
+<a class="buy-btn" href="https://wa.me/212770185637?text=Bonjour%20je%20souhaite%20acheter%20une%20PlayStation%205" target="_blank">
+Acheter
+</a>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=800">
+<div class="card-content">
+<h3>Gaming Laptop RTX</h3>
+<p>Parfait pour le gaming et le travail.</p>
+<div class="price">12999 DH</div>
+<a class="buy-btn" href="https://wa.me/212770185637?text=Bonjour%20je%20souhaite%20acheter%20un%20Gaming%20Laptop" target="_blank">
+Acheter
 </a>
 </div>
 </div>
 
 </section>
 
-<section class="features">
+<section class="features" id="features">
 
-<h2>Pourquoi choisir STOR BADR ET ANIS ?</h2>
+<h2 class="section-title">Pourquoi Nous Choisir ?</h2>
 
-<div class="feature-box">
+<div class="feature-grid">
 
 <div class="feature">
-<h3>🚚 Livraison rapide</h3>
+<h2>🚚</h2>
+<h3>Livraison Rapide</h3>
 <p>Livraison partout au Maroc.</p>
 </div>
 
 <div class="feature">
-<h3>🛡 Garantie</h3>
-<p>Tous nos produits sont garantis.</p>
+<h2>🛡️</h2>
+<h3>Garantie</h3>
+<p>Tous les produits sont garantis.</p>
 </div>
 
 <div class="feature">
-<h3>💳 Paiement sécurisé</h3>
+<h2>💳</h2>
+<h3>Paiement Sécurisé</h3>
 <p>Transactions fiables et sécurisées.</p>
 </div>
 
 <div class="feature">
-<h3>📞 Support 24/7</h3>
-<p>Nous sommes disponibles à tout moment.</p>
+<h2>📞</h2>
+<h3>Support 24/7</h3>
+<p>Une équipe disponible à tout moment.</p>
 </div>
 
 </div>
 
 </section>
 
+<section class="contact" id="contact">
+
+<h2 class="section-title">Contactez-nous</h2>
+
+<p style="margin-bottom:30px;font-size:20px;">
+WhatsApp : 0770185637
+</p>
+
+<a href="https://wa.me/212770185637" target="_blank">
+Contacter sur WhatsApp
+</a>
+
+</section>
+
 <footer>
+
 <h2>STOR BADR ET ANIS</h2>
-<p>WhatsApp : +212 770 185 631</p>
-<p>© 2026 Tous droits réservés.</p>
+
+<p>
+Votre magasin professionnel d'électronique
+</p>
+
+<p style="margin-top:15px;">
+© 2026 STOR BADR ET ANIS - Tous droits réservés
+</p>
+
 </footer>
 
 </body>
